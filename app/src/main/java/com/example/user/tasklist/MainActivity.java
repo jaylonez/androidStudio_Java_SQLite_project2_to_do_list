@@ -35,14 +35,12 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, selectedTask.getName(), Toast.LENGTH_SHORT).show();
 
     }
-
+//
 //    public void onCompletedClicked(View checkBoxSelected) {
 //
 //        CheckBox completed = (CheckBox) checkBoxSelected.getTag();
 //
-//        if (completed.isChecked()) {
-//            Toast.makeText(this, completed.getName(), Toast.LENGTH_SHORT).show();
-//        };
+//
 //
 //    }
 }
