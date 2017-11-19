@@ -36,5 +36,9 @@ public class Task {
         return this.completed;
     }
 
+    public void setCompleted(boolean checked) {
+        this.completed = checked;
+    }
+
 
 }

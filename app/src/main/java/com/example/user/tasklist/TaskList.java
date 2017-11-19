@@ -13,8 +13,12 @@ public class TaskList {
     public TaskList() {
         tasks = new ArrayList<>();
 
-        tasks.add(new Task(1, "Dishes", "gotta do"));
-        tasks.add(new Task(2, "Washing", "less important"));
+        Task task1 = new Task(1, "Dishes", "gotta do");
+        task1.setCompleted(true);
+
+        tasks.add(task1);
+        tasks.add(new Task(2, "Washing", "less important \nbut still \nand stuff"));
+
     }
 
     public ArrayList<Task> getTasks() {

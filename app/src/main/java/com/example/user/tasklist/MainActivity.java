@@ -3,12 +3,14 @@ package com.example.user.tasklist;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,4 +35,14 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, selectedTask.getName(), Toast.LENGTH_SHORT).show();
 
     }
+
+//    public void onCompletedClicked(View checkBoxSelected) {
+//
+//        CheckBox completed = (CheckBox) checkBoxSelected.getTag();
+//
+//        if (completed.isChecked()) {
+//            Toast.makeText(this, completed.getName(), Toast.LENGTH_SHORT).show();
+//        };
+//
+//    }
 }
