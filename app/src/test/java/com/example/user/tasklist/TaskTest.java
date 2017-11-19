@@ -32,4 +32,9 @@ public class TaskTest {
     public void canGetDescription() {
         assertEquals("gotta go fast!", task.getDescription());
     }
+
+    @Test
+    public void canGetCompleted() {
+        assertEquals(false, task.getCompleted());
+    }
 }
