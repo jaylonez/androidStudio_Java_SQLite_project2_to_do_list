@@ -31,7 +31,7 @@
         android:onClick="onAddButtonClicked"
         android:text="@string/plus"
         android:textAllCaps="false"
-        android:textSize="50sp"
+        android:textSize="45sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="@string/plus" />

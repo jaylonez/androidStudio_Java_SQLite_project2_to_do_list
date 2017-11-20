@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -37,6 +38,12 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
 
         CheckBox completed = listItemView.findViewById(R.id.completed);
         completed.setChecked(currentTaskItem.getCompetedBoolean());
+
+        completed.setTag(currentTaskItem);
+
+        RelativeLayout constraint = listItemView.findViewById(R.id.constraint);
+
+        constraint.setTag(currentTaskItem);
 
         listItemView.setTag(currentTaskItem);
 

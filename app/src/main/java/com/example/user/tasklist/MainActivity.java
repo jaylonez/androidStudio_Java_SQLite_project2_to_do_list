@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         SQLiteHelper sQLiteHelper = new SQLiteHelper(this);
 
-        ArrayList<Task> tasks = sQLiteHelper.getAllRecords();
+        ArrayList<Task> tasks = sQLiteHelper.getAllTasks();
 
         TaskListAdapter taskAdapter = new TaskListAdapter(this, tasks);
 
@@ -28,14 +28,17 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setAdapter(taskAdapter);
 
-
     }
 
     public void getTask(View listItemSelected) {
 
         Task selectedTask = (Task) listItemSelected.getTag();
 
-        Toast.makeText(this, selectedTask.getName(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ViewTaskActivity.class);
+
+        intent.putExtra("ID", selectedTask.getId());
+
+        startActivity(intent);
 
     }
 
@@ -44,19 +47,33 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void onCompletedClicked(View checkBoxSelected) {
-//
-//        Task completed = (Task) checkBoxSelected.getTag();
-//        CheckBox bool = (CheckBox) checkBoxSelected;
-//
-//        String bool2;
-//
-//        if (completed.getCompleted()) {
-//            bool2 = "true";
-//        } else {
-//            bool2 = "false";
-//        }
-//
-//    }
+    public int checkedToBool(CheckBox checkBox) {
+        if (checkBox.isChecked()) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+
+    public void onCompletedClicked(View checkBoxSelected) {
+
+        Task task = (Task) checkBoxSelected.getTag();
+        CheckBox checkBox = (CheckBox) checkBoxSelected;
+
+
+        int bool = checkedToBool(checkBox);
+
+
+        SQLiteHelper sQLiteHelper = new SQLiteHelper(this);
+        sQLiteHelper.getTaskByID(task.getId());
+
+        sQLiteHelper.setTaskCompleted(task, bool);
+
+    }
 
 }
+
+
+//when clicking checkbox, access which task the checkbox belongs to, set completed to
+//that state

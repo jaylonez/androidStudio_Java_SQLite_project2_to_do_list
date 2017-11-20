@@ -61,7 +61,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         database.close();
     }
 
-    public ArrayList<Task> getAllRecords() {
+    public ArrayList<Task> getAllTasks() {
         database = this.getReadableDatabase();
         Cursor cursor = database.query(TABLE_NAME, null, null, null, null, null, null);
         ArrayList<Task> tasks = new ArrayList<>();
@@ -82,5 +82,24 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         return tasks;
     }
 
+    public Task getTaskByID(int id) {
+        database = this.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE ID = " + id, null );
+        cursor.moveToNext();
+
+        Task task = new Task();
+        task.setId(cursor.getInt(0));
+        task.setName(cursor.getString(1));
+        task.setDescription(cursor.getString(2));
+        task.setCompleted(cursor.getInt(3));
+
+        return task;
+    }
+
+    public void setTaskCompleted(Task task, int bool) {
+        database = this.getReadableDatabase();
+        database.execSQL("update " + TABLE_NAME + " set " + COLUMN_TASK_COMPLETED + " = '" + task.getCompleted() + "' where " + COLUMN_ID + " = '" + task.getId() + "'");
+        database.close();
+    }
 
 }
