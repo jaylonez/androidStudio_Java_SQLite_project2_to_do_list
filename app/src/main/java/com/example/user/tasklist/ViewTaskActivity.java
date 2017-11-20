@@ -3,6 +3,7 @@ package com.example.user.tasklist;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 public class ViewTaskActivity extends AppCompatActivity {
@@ -27,6 +28,28 @@ public class ViewTaskActivity extends AppCompatActivity {
 
         name.setText(task.getName());
         description.setText(task.getDescription());
+
+    }
+
+
+    public void onDeleteTask(View deleteButton) {
+
+        Intent intent = getIntent();
+
+        Bundle extras = intent.getExtras();
+
+        int viewed_id = extras.getInt("ID");
+
+        SQLiteHelper sQLiteHelper = new SQLiteHelper(this);
+
+        Task task = sQLiteHelper.getTaskByID(viewed_id);
+
+        sQLiteHelper.deleteTask(task);
+
+        Intent intent2 = new Intent(this, MainActivity.class);
+
+        startActivity(intent2);
+
 
     }
 }

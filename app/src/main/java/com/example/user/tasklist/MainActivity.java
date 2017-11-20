@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -73,7 +72,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-
-
-//when clicking checkbox, access which task the checkbox belongs to, set completed to
-//that state
