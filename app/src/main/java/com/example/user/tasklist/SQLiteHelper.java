@@ -98,7 +98,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     public void setTaskCompleted(Task task, int bool) {
         database = this.getReadableDatabase();
-        database.execSQL("update " + TABLE_NAME + " set " + COLUMN_TASK_COMPLETED + " = '" + task.getCompleted() + "' where " + COLUMN_ID + " = '" + task.getId() + "'");
+        database.execSQL("update " + TABLE_NAME + " set " + COLUMN_TASK_COMPLETED + " = '" + bool + "' where " + COLUMN_ID + " = '" + task.getId() + "'");
         database.close();
     }
 
