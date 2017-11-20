@@ -1,5 +1,6 @@
 package com.example.user.tasklist;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TaskList taskList = new TaskList();
+        SQLiteHelper sQLiteHelper = new SQLiteHelper(this);
 
-        ArrayList<Task> tasks = taskList.getTasks();
+        ArrayList<Task> tasks = sQLiteHelper.getAllRecords();
 
         TaskListAdapter taskAdapter = new TaskListAdapter(this, tasks);
 
@@ -27,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setAdapter(taskAdapter);
 
-        SQLiteHelper sQLiteHelper = new SQLiteHelper(this);
 
     }
 
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onAddButtonClicked(View addButtonClicked) {
-
-
+        Intent intent = new Intent(this, AddTaskActivity.class);
+        startActivity(intent);
     }
 
 //    public void onCompletedClicked(View checkBoxSelected) {

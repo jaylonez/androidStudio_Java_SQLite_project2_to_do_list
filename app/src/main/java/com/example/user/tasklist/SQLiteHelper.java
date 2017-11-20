@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 5;
     public static final String DATABASE_NAME = "Tasks.db";
 
     public static final String TABLE_NAME = "TASKS";
