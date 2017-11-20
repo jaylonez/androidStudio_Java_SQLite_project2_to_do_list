@@ -9,14 +9,17 @@ public class Task {
     private int id;
     private String name;
     private String description;
-    private boolean completed;
+    private int completed;
 
+
+    public Task() {
+    }
 
     public Task(int id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.completed = false;
+        this.completed = 0;
     }
 
 
@@ -32,12 +35,33 @@ public class Task {
         return this.description;
     }
 
-    public boolean getCompleted() {
+    public int getCompleted() {
         return this.completed;
     }
 
-    public void setCompleted(boolean checked) {
-        this.completed = checked;
+    public void setCompleted(int bool) {
+        this.completed = bool;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean getCompetedBoolean() {
+        if (this.completed == 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 

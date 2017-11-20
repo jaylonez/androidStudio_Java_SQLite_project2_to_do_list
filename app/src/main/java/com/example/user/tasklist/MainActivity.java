@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.task_list);
 
         listView.setAdapter(taskAdapter);
+
+        SQLiteHelper sQLiteHelper = new SQLiteHelper(this);
+
     }
 
     public void getTask(View listItemSelected) {
@@ -35,12 +38,25 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, selectedTask.getName(), Toast.LENGTH_SHORT).show();
 
     }
-//
+
+    public void onAddButtonClicked(View addButtonClicked) {
+
+
+    }
+
 //    public void onCompletedClicked(View checkBoxSelected) {
 //
-//        CheckBox completed = (CheckBox) checkBoxSelected.getTag();
+//        Task completed = (Task) checkBoxSelected.getTag();
+//        CheckBox bool = (CheckBox) checkBoxSelected;
 //
+//        String bool2;
 //
+//        if (completed.getCompleted()) {
+//            bool2 = "true";
+//        } else {
+//            bool2 = "false";
+//        }
 //
 //    }
+
 }

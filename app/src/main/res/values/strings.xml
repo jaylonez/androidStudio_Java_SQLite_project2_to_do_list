@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TaskList</string>
     <string name="initial_string">initial_string</string>
+    <string name="plus">+</string>
 </resources>

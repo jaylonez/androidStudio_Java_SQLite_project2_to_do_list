@@ -14,7 +14,7 @@ public class TaskList {
         tasks = new ArrayList<>();
 
         Task task1 = new Task(1, "Dishes", "gotta do");
-        task1.setCompleted(true);
+        task1.setCompleted(1);
 
         tasks.add(task1);
         tasks.add(new Task(2, "Washing", "less important \nbut still \nand stuff"));
