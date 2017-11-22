@@ -111,6 +111,5 @@ public class ViewTaskActivity extends AppCompatActivity {
 
         startActivity(intent2);
 
-
     }
 }

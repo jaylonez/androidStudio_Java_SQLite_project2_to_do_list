@@ -82,4 +82,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onDeleteTask(View deleteButton) {
+
+
+        TaskRepo sQLiteHelper = new TaskRepo(this);
+
+        Task task = (Task) deleteButton.getTag();
+
+        sQLiteHelper.deleteTask(task);
+
+        Intent intent = new Intent(this, MainActivity.class);
+
+        startActivity(intent);
+
+    }
+
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -34,10 +35,10 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
 
         Task currentTaskItem = getItem(position);
 
-        TextView name = listItemView.findViewById(R.id.name);
+        final TextView name = listItemView.findViewById(R.id.name);
         name.setText(currentTaskItem.getName());
 
-        TextView description = listItemView.findViewById(R.id.description);
+        final TextView description = listItemView.findViewById(R.id.description);
         description.setText(currentTaskItem.getDescription());
 
         CheckBox completed = listItemView.findViewById(R.id.completed);
@@ -45,17 +46,23 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
 
         completed.setTag(currentTaskItem);
 
+        final Button delete_task = (Button) listItemView.findViewById(R.id.delete_task);
+
         RelativeLayout constraint = listItemView.findViewById(R.id.constraint);
 
         constraint.setOnLongClickListener(new View.OnLongClickListener() {
 
             @Override
             public boolean onLongClick(View view) {
-
-                Toast.makeText(getContext(), "Long Clicked " , Toast.LENGTH_SHORT).show();
+                
+                name.setVisibility(View.GONE);
+                description.setVisibility(View.GONE);
+                delete_task.setVisibility(View.VISIBLE);
                 return true;
             }
         });
+
+        delete_task.setTag(currentTaskItem);
 
         constraint.setTag(currentTaskItem);
 
