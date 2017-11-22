@@ -1,4 +1,4 @@
-package com.example.user.tasklist;
+package com.example.user.tasklist.Views;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ListView;
+
+import com.example.user.tasklist.R;
+import com.example.user.tasklist.Database.TaskRepo;
+import com.example.user.tasklist.Models.Task;
+import com.example.user.tasklist.TaskListAdapter;
 
 import java.util.ArrayList;
 
@@ -17,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SQLiteHelper sQLiteHelper = new SQLiteHelper(this);
+        TaskRepo sQLiteHelper = new TaskRepo(this);
 
         ArrayList<Task> tasks = sQLiteHelper.getAllTasks();
 
@@ -64,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         int bool = checkedToBool(checkBox);
 
 
-        SQLiteHelper sQLiteHelper = new SQLiteHelper(this);
+        TaskRepo sQLiteHelper = new TaskRepo(this);
         sQLiteHelper.getTaskByID(task.getId());
 
         sQLiteHelper.setTaskCompleted(task, bool);

@@ -1,10 +1,14 @@
-package com.example.user.tasklist;
+package com.example.user.tasklist.Views;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.example.user.tasklist.R;
+import com.example.user.tasklist.Database.TaskRepo;
+import com.example.user.tasklist.Models.Task;
 
 public class ViewTaskActivity extends AppCompatActivity {
 
@@ -22,7 +26,7 @@ public class ViewTaskActivity extends AppCompatActivity {
 
         int viewed_id = extras.getInt("ID");
 
-        SQLiteHelper sQLiteHelper = new SQLiteHelper(this);
+        TaskRepo sQLiteHelper = new TaskRepo(this);
 
         Task task = sQLiteHelper.getTaskByID(viewed_id);
 
@@ -40,7 +44,7 @@ public class ViewTaskActivity extends AppCompatActivity {
 
         int viewed_id = extras.getInt("ID");
 
-        SQLiteHelper sQLiteHelper = new SQLiteHelper(this);
+        TaskRepo sQLiteHelper = new TaskRepo(this);
 
         Task task = sQLiteHelper.getTaskByID(viewed_id);
 

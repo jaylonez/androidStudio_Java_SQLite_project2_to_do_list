@@ -1,4 +1,4 @@
-package com.example.user.tasklist;
+package com.example.user.tasklist.Models;
 
 /**
  * Created by user on 19/11/2017.

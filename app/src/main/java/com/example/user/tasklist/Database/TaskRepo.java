@@ -1,9 +1,12 @@
-package com.example.user.tasklist;
+package com.example.user.tasklist.Database;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
+
+import com.example.user.tasklist.Models.Task;
 
 import java.util.ArrayList;
 
@@ -11,9 +14,9 @@ import java.util.ArrayList;
  * Created by user on 20/11/2017.
  */
 
-public class SQLiteHelper extends SQLiteOpenHelper {
+public class TaskRepo extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 12;
     public static final String DATABASE_NAME = "Tasks.db";
 
     public static final String TABLE_NAME = "TASKS";
@@ -25,38 +28,60 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     private SQLiteDatabase database;
 
 
-    public SQLiteHelper(Context context) {
+    public TaskRepo(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME + " ( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_TASK_NAME + " VARCHAR, " + COLUMN_TASK_DESCRIPTION + " VARCHAR, " + COLUMN_TASK_COMPLETED + " INTEGER)");
+        String sql = "create table " + TABLE_NAME + "( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_TASK_NAME + " VARCHAR, " + COLUMN_TASK_DESCRIPTION + " VARCHAR, " + COLUMN_TASK_COMPLETED + " INTEGER)";
+        SQLiteStatement statement = db.compileStatement(sql);
+        statement.execute();
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        String sql = "DROP TABLE IF EXISTS " + TABLE_NAME;
+        SQLiteStatement statement = db.compileStatement(sql);
+        statement.execute();
+
         onCreate(db);
     }
 
 
     public void insertTask(Task task) {
         database = this.getReadableDatabase();
-        database.execSQL("INSERT INTO " + TABLE_NAME + "(" + COLUMN_TASK_NAME + "," + COLUMN_TASK_DESCRIPTION + "," + COLUMN_TASK_COMPLETED + ") VALUES('" + task.getName() + "','" + task.getDescription() + "','" + task.getCompleted() + "')");
+        String sql = "INSERT INTO " + TABLE_NAME + " ( " + COLUMN_TASK_NAME + " , " + COLUMN_TASK_DESCRIPTION + "," + COLUMN_TASK_COMPLETED + ") VALUES( ? , ? , '" + task.getCompleted() + "' )";
+        SQLiteStatement statement = database.compileStatement(sql);
+
+        statement.bindString(1, task.getName());
+        statement.bindString(2, task.getDescription());
+
+        statement.executeInsert();
         database.close();
     }
 
     public void updateTask(Task task) {
+
         database = this.getReadableDatabase();
-        database.execSQL("update " + TABLE_NAME + " set " + COLUMN_TASK_NAME + " = '" + task.getName() + "', " + COLUMN_TASK_DESCRIPTION + " = '" + task.getDescription() + "', " + COLUMN_TASK_COMPLETED + " = '" + task.getCompleted() + "' where " + COLUMN_ID + " = '" + task.getId() + "'");
+        String sql = "update " + TABLE_NAME + " set " + COLUMN_TASK_NAME + " = '" + task.getName() + "', " + COLUMN_TASK_DESCRIPTION + " = '" + task.getDescription() + "', " + COLUMN_TASK_COMPLETED + " = '" + task.getCompleted() + "' where " + COLUMN_ID + " = '" + task.getId() + "'";
+        SQLiteStatement statement = database.compileStatement(sql);
+
+        statement.bindString(1, task.getName());
+        statement.bindString(2, task.getDescription());
+
+        statement.executeUpdateDelete();
         database.close();
     }
 
     public void deleteTask(Task task) {
+
         database = this.getReadableDatabase();
-        database.execSQL("delete from " + TABLE_NAME + " where " + COLUMN_ID + " = '" + task.getId() + "'");
+        String sql = "delete from " + TABLE_NAME + " where " + COLUMN_ID + " = '" + task.getId() + "'";
+        SQLiteStatement statement = database.compileStatement(sql);
+
+        statement.executeUpdateDelete();
         database.close();
     }
 
@@ -92,12 +117,18 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         task.setDescription(cursor.getString(2));
         task.setCompleted(cursor.getInt(3));
 
+        cursor.close();
+        database.close();
         return task;
     }
 
     public void setTaskCompleted(Task task, int bool) {
+
         database = this.getReadableDatabase();
-        database.execSQL("update " + TABLE_NAME + " set " + COLUMN_TASK_COMPLETED + " = '" + bool + "' where " + COLUMN_ID + " = '" + task.getId() + "'");
+        String sql = "update " + TABLE_NAME + " set " + COLUMN_TASK_COMPLETED + " = '" + bool + "' where " + COLUMN_ID + " = '" + task.getId() + "'";
+        SQLiteStatement statement = database.compileStatement(sql);
+
+        statement.executeUpdateDelete();
         database.close();
     }
 

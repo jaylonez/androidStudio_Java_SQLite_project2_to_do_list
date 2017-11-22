@@ -9,6 +9,8 @@ import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.user.tasklist.Models.Task;
+
 import java.util.ArrayList;
 
 /**
