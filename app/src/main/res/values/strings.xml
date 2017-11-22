@@ -6,4 +6,6 @@
     <string name="description">description</string>
     <string name="add_task">ADD TASK</string>
     <string name="delete">DELETE TASK</string>
+    <string name="Priority">Priority</string>
+    <string name="Completed">Completed</string>
 </resources>

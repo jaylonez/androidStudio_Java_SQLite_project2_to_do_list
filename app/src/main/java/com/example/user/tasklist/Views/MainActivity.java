@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public int checkedToBool(CheckBox checkBox) {
+    public int checkedToInt(CheckBox checkBox) {
         if (checkBox.isChecked()) {
             return 1;
         } else {
@@ -72,15 +73,16 @@ public class MainActivity extends AppCompatActivity {
         CheckBox checkBox = (CheckBox) checkBoxSelected;
 
 
-        int bool = checkedToBool(checkBox);
+        int bool = checkedToInt(checkBox);
 
 
         TaskRepo sQLiteHelper = new TaskRepo(this);
-        sQLiteHelper.getTaskByID(task.getId());
 
-        sQLiteHelper.setTaskCompleted(task, bool);
+        sQLiteHelper.setTaskBoolean(task, "TASK_COMPLETED", bool);
 
     }
+
+
 
     public void onDeleteTask(View deleteButton) {
 

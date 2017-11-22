@@ -5,25 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <CheckBox
-        android:id="@+id/completed"
-        android:layout_width="60sp"
-        android:layout_height="60sp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:onClick="onCompletedClicked"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <RelativeLayout
         android:id="@+id/constraint"
         android:layout_width="294dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:longClickable="false"
+        android:longClickable="true"
         android:onClick="getTask"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:onClick="getTask">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/constraint2"
+        android:layout_width="300sp"
+        android:layout_height="60sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -42,6 +44,7 @@
         android:ellipsize="end"
         android:maxLines="2"
         android:text="@string/initial_string"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/initial_string" />
@@ -56,8 +59,35 @@
         android:maxLines="1"
         android:text="TextView"
         android:textStyle="bold"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/completed"
+        style="@android:style/Widget.CompoundButton.CheckBox"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="onCompletedClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/priority_bar"
+        style="@android:style/Widget.DeviceDefault.CompoundButton.Star"
+        android:layout_width="37dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/delete_task"
+        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintStart_toStartOf="@+id/constraint"
+        app:layout_constraintTop_toTopOf="@+id/constraint" />
 
     <Button
         android:id="@+id/delete_task"
@@ -66,12 +96,14 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="24dp"
+        android:longClickable="true"
         android:onClick="onDeleteTask"
         android:text="@string/delete"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/constraint"
         app:layout_constraintEnd_toEndOf="@+id/constraint"
-        app:layout_constraintStart_toStartOf="@+id/constraint"
-        app:layout_constraintTop_toTopOf="@+id/constraint" />
+        app:layout_constraintTop_toTopOf="@+id/constraint"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

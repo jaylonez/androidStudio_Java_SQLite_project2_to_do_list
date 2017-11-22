@@ -10,6 +10,7 @@ public class Task {
     private String name;
     private String description;
     private boolean completed;
+    private boolean priority;
 
 
     public Task() {
@@ -20,6 +21,7 @@ public class Task {
         this.name = name;
         this.description = description;
         this.completed = false;
+        this.priority = true;
     }
 
     public int getId() {
@@ -36,6 +38,30 @@ public class Task {
 
     public boolean getCompleted() {
         return this.completed;
+    }
+
+    public boolean getPriority() {
+        return this.priority;
+    }
+
+    public int getPriorityInt() {
+        if (this.priority) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public int getCompletedInt() {
+        if (this.completed) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public void setPriority(boolean bool) {
+        this.priority = bool;
     }
 
     public void setCompleted(boolean bool) {

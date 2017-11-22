@@ -1,11 +1,13 @@
 package com.example.user.tasklist.Views;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.user.tasklist.R;
@@ -24,6 +26,8 @@ public class ViewTaskActivity extends AppCompatActivity {
 
         final EditText name = findViewById(R.id.view_name);
         final EditText description = findViewById(R.id.view_description);
+        final CheckBox completed = findViewById(R.id.completed_checkbox);
+        final CheckBox priority = findViewById(R.id.priority_checkbox);
 
         Intent intent = getIntent();
 
@@ -37,6 +41,57 @@ public class ViewTaskActivity extends AppCompatActivity {
 
         name.setText(task.getName());
         description.setText(task.getDescription());
+        completed.setChecked(task.getCompleted());
+        priority.setChecked(task.getPriority());
+
+        final Context context = getApplicationContext();
+
+        completed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = getIntent();
+
+                Bundle extras = intent.getExtras();
+
+                int viewed_id = extras.getInt("ID");
+
+
+                TaskRepo sQLiteHelper = new TaskRepo(context);
+
+                Task task = sQLiteHelper.getTaskByID(viewed_id);
+
+                CheckBox checkBox = (CheckBox) v;
+
+                int bool = checkedToInt(checkBox);
+
+
+                sQLiteHelper.setTaskBoolean(task, "TASK_COMPLETED", bool);
+            }
+        });
+
+        priority.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = getIntent();
+
+                Bundle extras = intent.getExtras();
+
+                int viewed_id = extras.getInt("ID");
+
+                TaskRepo sQLiteHelper = new TaskRepo(context);
+
+                Task task = sQLiteHelper.getTaskByID(viewed_id);
+
+
+                CheckBox ratingBar = (CheckBox) v;
+
+
+                int bool = checkedToInt(ratingBar);
+
+
+                sQLiteHelper.setTaskBoolean(task, "TASK_PRIORITY", bool);
+            }
+        });
 
         name.addTextChangedListener(
                 new TextWatcher() {
@@ -112,4 +167,13 @@ public class ViewTaskActivity extends AppCompatActivity {
         startActivity(intent2);
 
     }
+
+    public int checkedToInt(CheckBox checkBox) {
+        if (checkBox.isChecked()) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
 }

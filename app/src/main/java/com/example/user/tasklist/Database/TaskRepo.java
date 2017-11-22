@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class TaskRepo extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 13;
+    private static final int DATABASE_VERSION = 17;
     public static final String DATABASE_NAME = "Tasks.db";
 
     public static final String TABLE_NAME = "TASKS";
@@ -24,6 +24,7 @@ public class TaskRepo extends SQLiteOpenHelper {
     public static final String COLUMN_TASK_NAME = "TASK_NAME";
     public static final String COLUMN_TASK_DESCRIPTION = "TASK_DESCRIPTION";
     public static final String COLUMN_TASK_COMPLETED = "TASK_COMPLETED";
+    public static final String COLUMN_TASK_PRIORITY = "TASK_PRIORITY";
 
     private SQLiteDatabase database;
 
@@ -35,7 +36,7 @@ public class TaskRepo extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "create table " + TABLE_NAME + "( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_TASK_NAME + " VARCHAR, " + COLUMN_TASK_DESCRIPTION + " VARCHAR, " + COLUMN_TASK_COMPLETED + " BOOLEAN)";
+        String sql = "create table " + TABLE_NAME + "( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_TASK_NAME + " VARCHAR, " + COLUMN_TASK_DESCRIPTION + " VARCHAR, " + COLUMN_TASK_COMPLETED + " BOOLEAN, " + COLUMN_TASK_PRIORITY + " BOOLEAN)";
         SQLiteStatement statement = db.compileStatement(sql);
         statement.execute();
     }
@@ -52,7 +53,7 @@ public class TaskRepo extends SQLiteOpenHelper {
 
     public void insertTask(Task task) {
         database = this.getReadableDatabase();
-        String sql = "INSERT INTO " + TABLE_NAME + " ( " + COLUMN_TASK_NAME + " , " + COLUMN_TASK_DESCRIPTION + "," + COLUMN_TASK_COMPLETED + ") VALUES( ? , ? , '" + task.getCompleted() + "' )";
+        String sql = "INSERT INTO " + TABLE_NAME + " ( " + COLUMN_TASK_NAME + " , " + COLUMN_TASK_DESCRIPTION + " , " + COLUMN_TASK_COMPLETED + " , " + COLUMN_TASK_PRIORITY + ") VALUES( ? , ? , '" + task.getCompletedInt() + "' , '" + task.getPriorityInt() + "' )";
         SQLiteStatement statement = database.compileStatement(sql);
 
         statement.bindString(1, task.getName());
@@ -98,6 +99,7 @@ public class TaskRepo extends SQLiteOpenHelper {
                 task.setName(cursor.getString(1));
                 task.setDescription(cursor.getString(2));
                 task.setCompleted(cursor.getInt(3) > 0);
+                task.setPriority(cursor.getInt(4) > 0);
                 tasks.add(task);
             }
         }
@@ -116,16 +118,17 @@ public class TaskRepo extends SQLiteOpenHelper {
         task.setName(cursor.getString(1));
         task.setDescription(cursor.getString(2));
         task.setCompleted(cursor.getInt(3) > 0);
+        task.setPriority(cursor.getInt(4) > 0);
 
         cursor.close();
         database.close();
         return task;
     }
 
-    public void setTaskCompleted(Task task, int bool) {
+    public void setTaskBoolean(Task task, String column, int bool) {
 
         database = this.getReadableDatabase();
-        String sql = "update " + TABLE_NAME + " set " + COLUMN_TASK_COMPLETED + " = '" + bool + "' where " + COLUMN_ID + " = '" + task.getId() + "'";
+        String sql = "update " + TABLE_NAME + " set " + column + " = " + bool + " where " + COLUMN_ID + " = '" + task.getId() + "'";
         SQLiteStatement statement = database.compileStatement(sql);
 
         statement.executeUpdateDelete();

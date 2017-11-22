@@ -33,7 +33,6 @@ public class AddTaskActivity extends AppCompatActivity {
         Task task = new Task();
         task.setName(new_task_name.getText().toString());
         task.setDescription(new_task_description.getText().toString());
-        task.setCompleted(false);
         sQLiteHelper.insertTask(task);
 
         Intent intent = new Intent(this, MainActivity.class);
