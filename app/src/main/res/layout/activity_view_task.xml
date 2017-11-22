@@ -5,49 +5,65 @@
     android:id="@+id/ViewTitle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context="com.example.user.tasklist.Views.ViewTaskActivity">
 
     <EditText
         android:id="@+id/view_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="360dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:ellipsize="end"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:gravity="top|left"
+        android:hint="@string/TaskName"
+        android:inputType="textMultiLine"
+        android:maxLines="2"
+        android:text="@string/initial_string"
+        android:textSize="18sp"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/initial_string" />
 
     <EditText
         android:id="@+id/view_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="360dp"
+        android:layout_height="286dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:ellipsize="end"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:gravity="top|left"
+        android:hint="@string/TaskDescription"
+        android:inputType="textMultiLine"
+        android:text="@string/initial_string"
+        android:textSize="14sp"
+        android:textColor="@color/textColor"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_name" />
+        app:layout_constraintTop_toBottomOf="@+id/view_name"
+        tools:text="@string/initial_string" />
 
     <Button
         android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="188dp"
         android:onClick="onDeleteTask"
         android:text="@string/delete"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_description" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/completed_checkbox"
@@ -55,22 +71,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/textColor"
         android:text="@string/Completed"
+        android:buttonTint="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_description"
-        tools:onClick="onViewCompletedClicked" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/priority_checkbox"
         style="@android:style/Widget.DeviceDefault.CompoundButton.Star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/textColor"
+        android:colorAccent="@color/colorAccent"
         android:text="@string/Priority"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_description"
-        tools:onClick="onViewPriorityClicked" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

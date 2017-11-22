@@ -3,13 +3,9 @@ package com.example.user.tasklist.Views;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ListView;
-import android.widget.RatingBar;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.user.tasklist.R;
@@ -36,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.task_list);
 
         listView.setAdapter(taskAdapter);
+
+        Toast.makeText(this, "Hint: Delete a task or\nset it as priority by\nholding down on it", Toast.LENGTH_LONG).show();
 
     }
 

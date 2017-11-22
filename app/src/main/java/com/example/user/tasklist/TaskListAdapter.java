@@ -7,14 +7,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.user.tasklist.Database.TaskRepo;
 import com.example.user.tasklist.Models.Task;
-import com.example.user.tasklist.Views.MainActivity;
 
 import java.util.ArrayList;
 
@@ -69,7 +66,7 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
 
                 priority_bar.setOnClickListener(new View.OnClickListener() {
 
-                    public int checkedToInt(CheckBox checkBox) {
+                    int checkedToInt(CheckBox checkBox) {
                         if (checkBox.isChecked()) {
                             return 1;
                         } else {

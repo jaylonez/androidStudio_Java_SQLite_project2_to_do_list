@@ -8,4 +8,7 @@
     <string name="delete">DELETE TASK</string>
     <string name="Priority">Priority</string>
     <string name="Completed">Completed</string>
+    <string name="TaskName">Task name</string>
+    <string name="TaskDescription">Task  description</string>
+    <string name="Done">Done</string>
 </resources>

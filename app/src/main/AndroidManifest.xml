@@ -10,8 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Views.AddTaskActivity"
-            android:parentActivityName=".Views.MainActivity"/>
-        <activity android:name=".Views.MainActivity">
+            android:parentActivityName=".Views.MainActivity"
+            android:label="Add a task"
+            android:textColor="@color/textColor"/>
+        <activity android:name=".Views.MainActivity"
+            android:label="All tasks"
+            android:textColor="@color/textColor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +23,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Views.ViewTaskActivity"
-            android:parentActivityName=".Views.MainActivity"></activity>
+            android:label="View or Edit task"
+            android:parentActivityName=".Views.MainActivity"
+            android:textColor="@color/textColor"/>
     </application>
 
 </manifest>
