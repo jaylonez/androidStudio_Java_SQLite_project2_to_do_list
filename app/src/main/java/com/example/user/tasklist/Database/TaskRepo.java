@@ -132,4 +132,14 @@ public class TaskRepo extends SQLiteOpenHelper {
         database.close();
     }
 
+    public void setTaskString(Task task, String column, String value) {
+
+        database = this.getReadableDatabase();
+        String sql = "update " + TABLE_NAME + " set " + column + " = '" + value + "' where " + COLUMN_ID + " = '" + task.getId() + "'";
+        SQLiteStatement statement = database.compileStatement(sql);
+
+        statement.executeUpdateDelete();
+        database.close();
+    }
+
 }
