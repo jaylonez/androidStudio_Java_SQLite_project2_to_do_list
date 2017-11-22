@@ -62,18 +62,18 @@ public class TaskRepo extends SQLiteOpenHelper {
         database.close();
     }
 
-    public void updateTask(Task task) {
-
-        database = this.getReadableDatabase();
-        String sql = "update " + TABLE_NAME + " set " + COLUMN_TASK_NAME + " = '" + task.getName() + "', " + COLUMN_TASK_DESCRIPTION + " = '" + task.getDescription() + "', " + COLUMN_TASK_COMPLETED + " = '" + task.getCompleted() + "' where " + COLUMN_ID + " = '" + task.getId() + "'";
-        SQLiteStatement statement = database.compileStatement(sql);
-
-        statement.bindString(1, task.getName());
-        statement.bindString(2, task.getDescription());
-
-        statement.executeUpdateDelete();
-        database.close();
-    }
+//    public void updateTask(Task task) {
+//
+//        database = this.getReadableDatabase();
+//        String sql = "update " + TABLE_NAME + " set " + COLUMN_TASK_NAME + " = '" + task.getName() + "', " + COLUMN_TASK_DESCRIPTION + " = '" + task.getDescription() + "', " + COLUMN_TASK_COMPLETED + " = '" + task.getCompleted() + "' where " + COLUMN_ID + " = '" + task.getId() + "'";
+//        SQLiteStatement statement = database.compileStatement(sql);
+//
+//        statement.bindString(1, task.getName());
+//        statement.bindString(2, task.getDescription());
+//
+//        statement.executeUpdateDelete();
+//        database.close();
+//    }
 
     public void deleteTask(Task task) {
 

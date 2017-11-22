@@ -8,8 +8,10 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.user.tasklist.Models.Task;
+import com.example.user.tasklist.Views.MainActivity;
 
 import java.util.ArrayList;
 
@@ -44,6 +46,16 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
         completed.setTag(currentTaskItem);
 
         RelativeLayout constraint = listItemView.findViewById(R.id.constraint);
+
+        constraint.setOnLongClickListener(new View.OnLongClickListener() {
+
+            @Override
+            public boolean onLongClick(View view) {
+
+                Toast.makeText(getContext(), "Long Clicked " , Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
 
         constraint.setTag(currentTaskItem);
 

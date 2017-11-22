@@ -3,9 +3,13 @@ package com.example.user.tasklist.Views;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.user.tasklist.R;
 import com.example.user.tasklist.Database.TaskRepo;
@@ -33,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(taskAdapter);
 
     }
+
+
 
     public void getTask(View listItemSelected) {
 
