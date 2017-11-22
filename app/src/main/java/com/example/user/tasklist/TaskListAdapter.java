@@ -39,7 +39,7 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
         description.setText(currentTaskItem.getDescription());
 
         CheckBox completed = listItemView.findViewById(R.id.completed);
-        completed.setChecked(currentTaskItem.getCompetedBoolean());
+        completed.setChecked(currentTaskItem.getCompleted());
 
         completed.setTag(currentTaskItem);
 

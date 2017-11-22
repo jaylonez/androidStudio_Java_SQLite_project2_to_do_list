@@ -9,7 +9,7 @@ public class Task {
     private int id;
     private String name;
     private String description;
-    private int completed;
+    private boolean completed;
 
 
     public Task() {
@@ -19,9 +19,8 @@ public class Task {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.completed = 0;
+        this.completed = false;
     }
-
 
     public int getId() {
         return this.id;
@@ -35,11 +34,11 @@ public class Task {
         return this.description;
     }
 
-    public int getCompleted() {
+    public boolean getCompleted() {
         return this.completed;
     }
 
-    public void setCompleted(int bool) {
+    public void setCompleted(boolean bool) {
         this.completed = bool;
     }
 
@@ -54,15 +53,5 @@ public class Task {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public boolean getCompetedBoolean() {
-        if (this.completed == 1) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
 
 }

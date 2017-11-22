@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class TaskRepo extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 12;
+    private static final int DATABASE_VERSION = 13;
     public static final String DATABASE_NAME = "Tasks.db";
 
     public static final String TABLE_NAME = "TASKS";
@@ -35,7 +35,7 @@ public class TaskRepo extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "create table " + TABLE_NAME + "( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_TASK_NAME + " VARCHAR, " + COLUMN_TASK_DESCRIPTION + " VARCHAR, " + COLUMN_TASK_COMPLETED + " INTEGER)";
+        String sql = "create table " + TABLE_NAME + "( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_TASK_NAME + " VARCHAR, " + COLUMN_TASK_DESCRIPTION + " VARCHAR, " + COLUMN_TASK_COMPLETED + " BOOLEAN)";
         SQLiteStatement statement = db.compileStatement(sql);
         statement.execute();
     }
@@ -97,7 +97,7 @@ public class TaskRepo extends SQLiteOpenHelper {
                 task.setId(cursor.getInt(0));
                 task.setName(cursor.getString(1));
                 task.setDescription(cursor.getString(2));
-                task.setCompleted(cursor.getInt(3));
+                task.setCompleted(cursor.getInt(3) > 0);
                 tasks.add(task);
             }
         }
@@ -115,7 +115,7 @@ public class TaskRepo extends SQLiteOpenHelper {
         task.setId(cursor.getInt(0));
         task.setName(cursor.getString(1));
         task.setDescription(cursor.getString(2));
-        task.setCompleted(cursor.getInt(3));
+        task.setCompleted(cursor.getInt(3) > 0);
 
         cursor.close();
         database.close();
