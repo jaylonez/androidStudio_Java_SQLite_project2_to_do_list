@@ -1,8 +1,5 @@
-package com.example.user.tasklist.Models;
+package com.example.user.tasklist.models;
 
-/**
- * Created by user on 19/11/2017.
- */
 
 public class Task {
 

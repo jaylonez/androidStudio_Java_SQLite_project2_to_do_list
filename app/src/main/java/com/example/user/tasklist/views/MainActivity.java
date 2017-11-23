@@ -1,4 +1,4 @@
-package com.example.user.tasklist.Views;
+package com.example.user.tasklist.views;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,31 +9,36 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import com.example.user.tasklist.Database.TaskRepo;
-import com.example.user.tasklist.Models.Task;
 import com.example.user.tasklist.R;
-import com.example.user.tasklist.TaskListAdapter;
+import com.example.user.tasklist.database.TaskRepo;
+import com.example.user.tasklist.models.Task;
+import com.example.user.tasklist.adapters.TaskListAdapter;
 
 import java.util.ArrayList;
 
-public class PrioritiesActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Utils.onActivityCreateSetTheme(this);
-        setContentView(R.layout.activity_priorities);
+        setContentView(R.layout.activity_main);
 
         TaskRepo sQLiteHelper = new TaskRepo(this);
 
-        ArrayList<Task> tasks = sQLiteHelper.getAllPriorityTasks();
+        ArrayList<Task> tasks = sQLiteHelper.getAllTasks();
 
         TaskListAdapter taskAdapter = new TaskListAdapter(this, tasks);
 
-        ListView listView = findViewById(R.id.task_list_starred);
+        ListView listView = findViewById(R.id.task_list);
 
         listView.setAdapter(taskAdapter);
+
+        Toast.makeText(this, "Hint: Delete a task or\nset it as priority by\nholding down on it", Toast.LENGTH_LONG).show();
+
     }
 
     @Override
@@ -46,8 +51,8 @@ public class PrioritiesActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.all_tasks) {
-            Intent intent = new Intent(this, MainActivity.class);
+        if (item.getItemId() == R.id.prioritized_tasks) {
+            Intent intent = new Intent(this, PrioritiesActivity.class);
             startActivity(intent);
         }
         else if (item.getItemId() == R.id.themes) {
@@ -56,6 +61,8 @@ public class PrioritiesActivity extends AppCompatActivity {
         }
         return true;
     }
+
+
 
     public void getTask(View listItemSelected) {
 

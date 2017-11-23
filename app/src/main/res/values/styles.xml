@@ -8,6 +8,8 @@
         <item name="colorAccent">@color/DPcolorAccent</item>
         <item name="textColor">@color/DtextColor</item>
         <item name="background">@color/DcolorPrimaryDark</item>
+        <item name="themeButtonStyle">@style/DbuttonStyle</item>
+        <item name="textButtonColor">@color/DtextColor</item>
     </style>
 
     <style name="DraculaRed" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -17,15 +19,19 @@
         <item name="colorAccent">@color/DRcolorAccent</item>
         <item name="textColor">@color/DtextColor</item>
         <item name="background">@color/DcolorPrimaryDark</item>
+        <item name="themeButtonStyle">@style/DbuttonStyle</item>
+        <item name="textButtonColor">@color/DtextColor</item>
     </style>
 
-    <style name="DraculaBlue" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="DraculaYellow" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/DcolorPrimary</item>
         <item name="colorPrimaryDark">@color/DcolorPrimaryDark</item>
-        <item name="colorAccent">@color/DBcolorAccent</item>
+        <item name="colorAccent">@color/DYcolorAccent</item>
         <item name="textColor">@color/DtextColor</item>
         <item name="background">@color/DcolorPrimaryDark</item>
+        <item name="themeButtonStyle">@style/DbuttonStyle</item>
+        <item name="textButtonColor">@color/DcolorPrimaryDark</item>
     </style>
 
     <style name="LightPurple" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -35,6 +41,8 @@
         <item name="colorAccent">@color/LPcolorPrimaryDark</item>
         <item name="textColor">@color/LtextColor</item>
         <item name="background">@color/Lbackground</item>
+        <item name="themeButtonStyle">@style/LbuttonStyle</item>
+        <item name="textButtonColor">@color/DtextColor</item>
     </style>
 
     <style name="DoNotClick" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -44,6 +52,32 @@
         <item name="colorAccent">@color/white</item>
         <item name="textColor">@color/white</item>
         <item name="background">@color/white</item>
+        <item name="colorButtonNormal">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="textButtonColor">@color/DtextColor</item>
+    </style>
+
+    <style name="FabulousPink" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="textColor">@color/white</item>
+        <item name="background">@color/white</item>
+        <item name="colorButtonNormal">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="textButtonColor">@color/DtextColor</item>
+    </style>
+
+    <style name="DbuttonStyle" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/DtextColor</item>
+        <item name="android:textColor">@color/DcolorPrimaryDark</item>
+    </style>
+
+
+    <style name="LbuttonStyle" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/LtextColor</item>
+        <item name="android:textColor">@color/Lbackground</item>
     </style>
 
 </resources>

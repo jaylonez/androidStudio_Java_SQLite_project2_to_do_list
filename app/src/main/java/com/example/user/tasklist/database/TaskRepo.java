@@ -1,4 +1,4 @@
-package com.example.user.tasklist.Database;
+package com.example.user.tasklist.database;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -6,25 +6,22 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 
-import com.example.user.tasklist.Models.Task;
+import com.example.user.tasklist.models.Task;
 
 import java.util.ArrayList;
 
-/**
- * Created by user on 20/11/2017.
- */
 
 public class TaskRepo extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 17;
-    public static final String DATABASE_NAME = "Tasks.db";
+    private static final String DATABASE_NAME = "Tasks.db";
 
-    public static final String TABLE_NAME = "TASKS";
-    public static final String COLUMN_ID = "ID";
-    public static final String COLUMN_TASK_NAME = "TASK_NAME";
-    public static final String COLUMN_TASK_DESCRIPTION = "TASK_DESCRIPTION";
-    public static final String COLUMN_TASK_COMPLETED = "TASK_COMPLETED";
-    public static final String COLUMN_TASK_PRIORITY = "TASK_PRIORITY";
+    private static final String TABLE_NAME = "TASKS";
+    private static final String COLUMN_ID = "ID";
+    private static final String COLUMN_TASK_NAME = "TASK_NAME";
+    private static final String COLUMN_TASK_DESCRIPTION = "TASK_DESCRIPTION";
+    private static final String COLUMN_TASK_COMPLETED = "TASK_COMPLETED";
+    private static final String COLUMN_TASK_PRIORITY = "TASK_PRIORITY";
 
     private SQLiteDatabase database;
 

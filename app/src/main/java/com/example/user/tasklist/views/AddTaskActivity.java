@@ -1,4 +1,4 @@
-package com.example.user.tasklist.Views;
+package com.example.user.tasklist.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,12 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.user.tasklist.R;
-import com.example.user.tasklist.Database.TaskRepo;
-import com.example.user.tasklist.Models.Task;
+import com.example.user.tasklist.database.TaskRepo;
+import com.example.user.tasklist.models.Task;
 
-/**
- * Created by user on 20/11/2017.
- */
 
 public class AddTaskActivity extends AppCompatActivity {
 
@@ -27,8 +24,8 @@ public class AddTaskActivity extends AppCompatActivity {
     }
 
     public void onAddTask(View view) {
-        EditText new_task_name = (EditText) findViewById(R.id.new_task_name);
-        EditText new_task_description = (EditText) findViewById(R.id.new_task_description);
+        EditText new_task_name = findViewById(R.id.new_task_name);
+        EditText new_task_description = findViewById(R.id.new_task_description);
         TaskRepo sQLiteHelper = new TaskRepo(this);
 
         Task task = new Task();

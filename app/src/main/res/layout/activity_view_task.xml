@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/background"
-    tools:context="com.example.user.tasklist.Views.ViewTaskActivity">
+    tools:context="com.example.user.tasklist.views.ViewTaskActivity">
 
     <EditText
         android:id="@+id/view_name"

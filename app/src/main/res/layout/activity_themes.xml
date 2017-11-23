@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/background"
-    tools:context="com.example.user.tasklist.Views.ThemesActivity">
+    tools:context="com.example.user.tasklist.views.ThemesActivity">
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="124dp"
+        android:layout_marginEnd="100dp"
         android:layout_marginTop="36dp"
         android:text="Hello C-Sharp"
         android:textColor="?attr/textColor"
@@ -43,9 +43,9 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="128dp"
-        android:layout_marginTop="16dp"
-        android:text="Dracula Blue"
+        android:layout_marginEnd="120dp"
+        android:layout_marginTop="20dp"
+        android:text="Dracula Yellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -69,6 +69,16 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="148dp"
+        android:layout_marginTop="20dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+    <Button
         android:id="@+id/example_addButton"
         android:layout_width="70sp"
         android:layout_height="70sp"
@@ -79,7 +89,7 @@
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/plus"
         android:textAllCaps="false"
-        android:textColor="?attr/textColor"
+        android:textColor="?attr/textButtonColor"
         android:textSize="45sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,10 +98,10 @@
     <CheckBox
         android:id="@+id/example_checkBox"
         style="@android:style/Widget.CompoundButton.CheckBox"
-        android:layout_width="73dp"
+        android:layout_width="73sp"
         android:layout_height="60sp"
-        android:layout_marginEnd="240dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginEnd="220dp"
+        android:layout_marginTop="432dp"
         android:buttonTint="?attr/colorAccent"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/Done"
