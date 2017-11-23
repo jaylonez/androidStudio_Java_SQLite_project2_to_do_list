@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/all_tasks"
+        android:title="@string/all_tasks" />
+    <item
+        android:id="@+id/prioritized_tasks"
+        android:title="@string/prioritized_tasks"
+        android:maxLength="20"/>
+    <item
+        android:id="@+id/themes"
+        android:title="@string/themes" />
+</menu>

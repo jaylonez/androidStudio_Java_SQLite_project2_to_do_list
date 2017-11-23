@@ -3,6 +3,9 @@ package com.example.user.tasklist.Views;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ListView;
@@ -35,6 +38,27 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Hint: Delete a task or\nset it as priority by\nholding down on it", Toast.LENGTH_LONG).show();
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_menu, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.prioritized_tasks) {
+            Intent intent = new Intent(this, PrioritiesActivity.class);
+            startActivity(intent);
+        }
+        else if (item.getItemId() == R.id.themes) {
+            Intent intent = new Intent(this, ThemesActivity.class);
+            startActivity(intent);
+        }
+        return true;
     }
 
 

@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Views.AddTaskActivity"
-            android:parentActivityName=".Views.MainActivity"
+        <activity
+            android:name=".Views.AddTaskActivity"
             android:label="Add a task"
-            android:textColor="@color/textColor"/>
-        <activity android:name=".Views.MainActivity"
+            android:parentActivityName=".Views.MainActivity"
+            android:textColor="@color/textColor" />
+        <activity
+            android:name=".Views.MainActivity"
             android:label="All tasks"
             android:textColor="@color/textColor">
             <intent-filter>
@@ -22,10 +24,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Views.ViewTaskActivity"
+        <activity
+            android:name=".Views.ViewTaskActivity"
             android:label="View or Edit task"
             android:parentActivityName=".Views.MainActivity"
-            android:textColor="@color/textColor"/>
+            android:textColor="@color/textColor" />
+        <activity android:name=".Views.ThemesActivity"
+            android:label="Select a theme"/>
+        <activity android:name=".Views.PrioritiesActivity"
+            android:label="All starred tasks"></activity>
     </application>
 
 </manifest>
