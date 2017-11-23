@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.all_tasks) {
+            Intent intent = new Intent(this, PrioritiesActivity.class);
+            startActivity(intent);
+        }
         if (item.getItemId() == R.id.prioritized_tasks) {
             Intent intent = new Intent(this, PrioritiesActivity.class);
             startActivity(intent);

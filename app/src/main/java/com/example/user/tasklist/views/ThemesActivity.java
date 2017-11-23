@@ -62,11 +62,16 @@ public class ThemesActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.all_tasks) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        } else if (item.getItemId() == R.id.prioritized_tasks) {
+        if (item.getItemId() == R.id.all_tasks) {
             Intent intent = new Intent(this, PrioritiesActivity.class);
+            startActivity(intent);
+        }
+        if (item.getItemId() == R.id.prioritized_tasks) {
+            Intent intent = new Intent(this, PrioritiesActivity.class);
+            startActivity(intent);
+        }
+        else if (item.getItemId() == R.id.themes) {
+            Intent intent = new Intent(this, ThemesActivity.class);
             startActivity(intent);
         }
         return true;

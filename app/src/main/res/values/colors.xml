@@ -11,4 +11,7 @@
     <color name="DtextColor">#bdbdbd</color>
     <color name="LtextColor">#2e2e2e</color>
     <color name="white">#ffffff</color>
+    <color name="FPcolorPrimary">#FF69B4</color>
+    <color name="FPcolorPrimaryDark">#ff87c3</color>
+    <color name="FPbackground">#ff96ca</color>
 </resources>
