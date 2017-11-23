@@ -4,7 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
+    android:background="?attr/colorPrimaryDark"
     tools:context="com.example.user.tasklist.Views.ThemesActivity">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="124dp"
+        android:layout_marginTop="36dp"
+        android:text="Hello C-Sharp"
+        android:textColor="?attr/textColor"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="144dp"
+        android:layout_marginTop="36dp"
+        android:text="First Theme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="144dp"
+        android:layout_marginTop="24dp"
+        android:text="Second Theme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button1" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="156dp"
+        android:layout_marginTop="64dp"
+        android:text="Third Theme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/example_addButton"
+        android:layout_width="70sp"
+        android:layout_height="70sp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_button"
+        android:fontFamily="serif"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/plus"
+        android:textAllCaps="false"
+        android:textColor="?attr/textColor"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@string/plus" />
+
+    <CheckBox
+        android:id="@+id/example_checkBox"
+        style="@android:style/Widget.CompoundButton.CheckBox"
+        android:layout_width="73dp"
+        android:layout_height="60sp"
+        android:layout_marginEnd="240dp"
+        android:layout_marginTop="420dp"
+        android:buttonTint="?attr/colorAccent"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/Done"
+        android:textColor="?attr/textColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

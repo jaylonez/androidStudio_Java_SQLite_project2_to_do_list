@@ -8,16 +8,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/DraculaPurple">
         <activity
             android:name=".Views.AddTaskActivity"
             android:label="Add a task"
             android:parentActivityName=".Views.MainActivity"
-            android:textColor="@color/textColor" />
+            android:textColor="@color/DtextColor" />
         <activity
             android:name=".Views.MainActivity"
             android:label="All tasks"
-            android:textColor="@color/textColor">
+            android:textColor="@color/DtextColor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +28,7 @@
             android:name=".Views.ViewTaskActivity"
             android:label="View or Edit task"
             android:parentActivityName=".Views.MainActivity"
-            android:textColor="@color/textColor" />
+            android:textColor="@color/DtextColor" />
         <activity android:name=".Views.ThemesActivity"
             android:label="Select a theme"/>
         <activity android:name=".Views.PrioritiesActivity"

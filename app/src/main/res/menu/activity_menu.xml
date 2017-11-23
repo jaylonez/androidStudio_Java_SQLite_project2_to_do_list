@@ -3,12 +3,14 @@
 
     <item
         android:id="@+id/all_tasks"
+        android:textColor="#000"
         android:title="@string/all_tasks" />
     <item
         android:id="@+id/prioritized_tasks"
-        android:title="@string/prioritized_tasks"
-        android:maxLength="20"/>
+        android:textColor="#000"
+        android:title="@string/prioritized_tasks" />
     <item
         android:id="@+id/themes"
+        android:textColor="#000"
         android:title="@string/themes" />
 </menu>

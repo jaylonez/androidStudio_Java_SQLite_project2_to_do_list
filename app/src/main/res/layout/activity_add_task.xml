@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/backgroundColor"
+    android:background="?attr/colorPrimaryDark"
     android:layout_height="match_parent">
 
     <Button
@@ -35,8 +35,8 @@
         android:hint="@string/TaskName"
         android:inputType="textMultiLine"
         android:maxLines="2"
+        android:textColor="?attr/textColor"
         android:textSize="18sp"
-        android:textColor="@color/textColor"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,11 +52,11 @@
         android:layout_marginTop="16dp"
         android:ellipsize="end"
         android:ems="10"
-        android:textSize="14sp"
         android:gravity="top|left"
-        android:textColor="@color/textColor"
         android:hint="@string/TaskDescription"
         android:inputType="textMultiLine"
+        android:textColor="?attr/textColor"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/add_task"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

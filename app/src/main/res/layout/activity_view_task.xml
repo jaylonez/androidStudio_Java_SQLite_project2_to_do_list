@@ -5,7 +5,7 @@
     android:id="@+id/ViewTitle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
+    android:background="?attr/colorPrimaryDark"
     tools:context="com.example.user.tasklist.Views.ViewTaskActivity">
 
     <EditText
@@ -23,7 +23,7 @@
         android:maxLines="2"
         android:text="@string/initial_string"
         android:textSize="18sp"
-        android:textColor="@color/textColor"
+        android:textColor="?attr/textColor"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
         android:inputType="textMultiLine"
         android:text="@string/initial_string"
         android:textSize="14sp"
-        android:textColor="@color/textColor"
+        android:textColor="?attr/textColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,9 +72,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="16dp"
-        android:textColor="@color/textColor"
+        android:textColor="?attr/textColor"
         android:text="@string/Completed"
-        android:buttonTint="@color/colorAccent"
+        android:buttonTint="?attr/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,8 +85,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="16dp"
-        android:textColor="@color/textColor"
-        android:colorAccent="@color/colorAccent"
+        android:textColor="?attr/textColor"
+        android:colorAccent="?attr/colorAccent"
         android:text="@string/Priority"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

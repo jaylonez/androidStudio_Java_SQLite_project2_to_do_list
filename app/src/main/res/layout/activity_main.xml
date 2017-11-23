@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
+    android:background="?attr/colorPrimaryDark"
     tools:context="com.example.user.tasklist.Views.MainActivity">
 
     <ListView
@@ -15,7 +15,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:divider="@color/textColor"
+        android:divider="?attr/textColor"
         android:dividerHeight="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
         android:onClick="onAddButtonClicked"
         android:text="@string/plus"
         android:textAllCaps="false"
-        android:textColor="@color/textColor"
+        android:textColor="?attr/textColor"
         android:textSize="45sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
