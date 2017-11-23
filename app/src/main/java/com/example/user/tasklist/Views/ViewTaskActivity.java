@@ -22,6 +22,7 @@ public class ViewTaskActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_view_task);
 
         final EditText name = findViewById(R.id.view_name);

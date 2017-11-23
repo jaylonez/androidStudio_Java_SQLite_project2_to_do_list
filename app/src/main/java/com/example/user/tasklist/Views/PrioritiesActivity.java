@@ -22,6 +22,7 @@ public class PrioritiesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_priorities);
 
         TaskRepo sQLiteHelper = new TaskRepo(this);

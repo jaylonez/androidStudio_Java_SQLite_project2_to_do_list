@@ -28,8 +28,7 @@ public class ThemesActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v)
     {
         // TODO Auto-generated method stub
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.button1:
                 Utils.changeToTheme(this, Utils.THEME_DPURPLE);
                 break;
