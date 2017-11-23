@@ -11,7 +11,7 @@ import com.example.user.tasklist.database.TaskRepo;
 import com.example.user.tasklist.models.Task;
 
 
-public class AddTaskActivity extends AppCompatActivity {
+public class AddTaskActivity extends LayoutActivity {
 
 
 
