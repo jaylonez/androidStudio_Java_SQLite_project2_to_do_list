@@ -23,6 +23,7 @@ public class ThemesActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.button1).setOnClickListener(this);
         findViewById(R.id.button2).setOnClickListener(this);
         findViewById(R.id.button3).setOnClickListener(this);
+        findViewById(R.id.button4).setOnClickListener(this);
     }
     @Override
     public void onClick(View v)
@@ -38,6 +39,8 @@ public class ThemesActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.button3:
                 Utils.changeToTheme(this, Utils.THEME_DBLUE);
                 break;
+            case R.id.button4:
+                Utils.changeToTheme(this, Utils.THEME_LPURPLE);
         }
     }
 

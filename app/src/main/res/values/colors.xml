@@ -5,5 +5,9 @@
     <color name="DPcolorAccent">#663096</color>
     <color name="DRcolorAccent">#b20000</color>
     <color name="DBcolorAccent">#0000e5</color>
+    <color name="Lbackground">#ffffff</color>
+    <color name="LPcolorPrimary">#44146f</color>
+    <color name="LPcolorPrimaryDark">#663096</color>
     <color name="DtextColor">#a8a8a8</color>
+    <color name="LtextColor">#1e1e1e</color>
 </resources>

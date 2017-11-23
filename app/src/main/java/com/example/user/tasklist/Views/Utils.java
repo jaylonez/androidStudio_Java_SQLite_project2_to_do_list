@@ -15,6 +15,7 @@ public class Utils {
     public final static int THEME_DPURPLE = 0;
     public final static int THEME_DRED = 1;
     public final static int THEME_DBLUE = 2;
+    public final static int THEME_LPURPLE = 3;
 
 
     public static void changeToTheme(Activity activity, int theme)
@@ -37,6 +38,9 @@ public class Utils {
                 break;
             case THEME_DBLUE:
                 activity.setTheme(R.style.DraculaBlue);
+                break;
+            case THEME_LPURPLE:
+                activity.setTheme(R.style.LightPurple);
                 break;
         }
     }

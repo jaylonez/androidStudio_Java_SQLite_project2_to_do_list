@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorPrimaryDark"
+    android:background="?attr/background"
     tools:context="com.example.user.tasklist.Views.ThemesActivity">
 
     <TextView
@@ -23,9 +23,9 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="144dp"
+        android:layout_marginEnd="120dp"
         android:layout_marginTop="36dp"
-        android:text="First Theme"
+        android:text="Dracula Purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
@@ -33,9 +33,9 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="144dp"
-        android:layout_marginTop="24dp"
-        android:text="Second Theme"
+        android:layout_marginEnd="132dp"
+        android:layout_marginTop="20dp"
+        android:text="Dracula Red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button1" />
 
@@ -43,11 +43,21 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="156dp"
-        android:layout_marginTop="64dp"
-        android:text="Third Theme"
+        android:layout_marginEnd="128dp"
+        android:layout_marginTop="16dp"
+        android:text="Dracula Blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="132dp"
+        android:layout_marginTop="28dp"
+        android:text="Light Purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
         android:id="@+id/example_addButton"
