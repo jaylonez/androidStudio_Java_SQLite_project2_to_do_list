@@ -9,9 +9,10 @@
     <string name="Priority">Priority</string>
     <string name="Completed">Completed</string>
     <string name="TaskName">Task name</string>
-    <string name="TaskDescription">Task  description</string>
+    <string name="TaskDescription">Task description</string>
     <string name="Done">Done</string>
     <string name="all_tasks">All Tasks</string>
     <string name="prioritized_tasks">Prioritized</string>
     <string name="themes">Themes</string>
+    <string name="DoNotClick">DO NOT CLICK!!!!</string>
 </resources>

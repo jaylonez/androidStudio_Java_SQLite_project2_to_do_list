@@ -1,6 +1,5 @@
 package com.example.user.tasklist.Views;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +23,7 @@ public class ThemesActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.button2).setOnClickListener(this);
         findViewById(R.id.button3).setOnClickListener(this);
         findViewById(R.id.button4).setOnClickListener(this);
+        findViewById(R.id.button5).setOnClickListener(this);
     }
     @Override
     public void onClick(View v)
@@ -41,6 +41,10 @@ public class ThemesActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.button4:
                 Utils.changeToTheme(this, Utils.THEME_LPURPLE);
+                break;
+            case R.id.button5:
+                Utils.changeToTheme(this, Utils.THEME_DONOTCLICK);
+                break;
         }
     }
 
