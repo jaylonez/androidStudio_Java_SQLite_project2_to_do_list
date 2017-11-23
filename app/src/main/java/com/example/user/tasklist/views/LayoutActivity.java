@@ -8,9 +8,6 @@ import android.view.MenuItem;
 
 import com.example.user.tasklist.R;
 
-/**
- * Created by user on 23/11/2017.
- */
 
 public abstract class LayoutActivity extends AppCompatActivity{
 
