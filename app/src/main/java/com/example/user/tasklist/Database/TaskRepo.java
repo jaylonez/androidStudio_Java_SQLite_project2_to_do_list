@@ -125,6 +125,28 @@ public class TaskRepo extends SQLiteOpenHelper {
         return task;
     }
 
+    public ArrayList<Task> getAllPriorityTasks() {
+        database = this.getReadableDatabase();
+        Cursor cursor = database.query(TABLE_NAME, null, COLUMN_TASK_PRIORITY + " = ?", new String[] { "1" }, null, null, null);
+        ArrayList<Task> tasks = new ArrayList<>();
+        Task task;
+        if (cursor.getCount() > 0) {
+            for (int i = 0; i < cursor.getCount(); i++) {
+                cursor.moveToNext();
+                task = new Task();
+                task.setId(cursor.getInt(0));
+                task.setName(cursor.getString(1));
+                task.setDescription(cursor.getString(2));
+                task.setCompleted(cursor.getInt(3) > 0);
+                task.setPriority(cursor.getInt(4) > 0);
+                tasks.add(task);
+            }
+        }
+        cursor.close();
+        database.close();
+        return tasks;
+    }
+
     public void setTaskBoolean(Task task, String column, int bool) {
 
         database = this.getReadableDatabase();

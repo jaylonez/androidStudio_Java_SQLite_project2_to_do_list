@@ -4,6 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context="com.example.user.tasklist.Views.PrioritiesActivity">
+
+    <ListView
+        android:id="@+id/task_list_starred"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:divider="@color/textColor"
+        android:dividerHeight="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/add_task_starred_button"
+        android:layout_width="70sp"
+        android:layout_height="70sp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_button"
+        android:fontFamily="serif"
+        android:gravity="center_vertical|center_horizontal"
+        android:onClick="onAddButtonClicked"
+        android:text="@string/plus"
+        android:textAllCaps="false"
+        android:textColor="@color/textColor"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@string/plus" />
 
 </android.support.constraint.ConstraintLayout>
