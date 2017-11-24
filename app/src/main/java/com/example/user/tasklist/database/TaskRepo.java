@@ -33,7 +33,13 @@ public class TaskRepo extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "create table " + TABLE_NAME + "( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_TASK_NAME + " VARCHAR, " + COLUMN_TASK_DESCRIPTION + " VARCHAR, " + COLUMN_TASK_COMPLETED + " BOOLEAN, " + COLUMN_TASK_PRIORITY + " BOOLEAN)";
+        String sql = "create table " + TABLE_NAME +
+                "( " + COLUMN_ID +
+                " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                COLUMN_TASK_NAME + " VARCHAR, " +
+                COLUMN_TASK_DESCRIPTION + " VARCHAR, " +
+                COLUMN_TASK_COMPLETED + " BOOLEAN, " +
+                COLUMN_TASK_PRIORITY + " BOOLEAN)";
         SQLiteStatement statement = db.compileStatement(sql);
         statement.execute();
     }
@@ -50,7 +56,13 @@ public class TaskRepo extends SQLiteOpenHelper {
 
     public void insertTask(Task task) {
         database = this.getReadableDatabase();
-        String sql = "INSERT INTO " + TABLE_NAME + " ( " + COLUMN_TASK_NAME + " , " + COLUMN_TASK_DESCRIPTION + " , " + COLUMN_TASK_COMPLETED + " , " + COLUMN_TASK_PRIORITY + ") VALUES( ? , ? , '" + task.getCompletedInt() + "' , '" + task.getPriorityInt() + "' )";
+        String sql = "INSERT INTO " + TABLE_NAME +
+                " ( " + COLUMN_TASK_NAME +
+                " , " + COLUMN_TASK_DESCRIPTION +
+                " , " + COLUMN_TASK_COMPLETED +
+                " , " + COLUMN_TASK_PRIORITY +
+                ") VALUES( ? , ? , '" + task.getCompletedInt() +
+                "' , '" + task.getPriorityInt() + "' )";
         SQLiteStatement statement = database.compileStatement(sql);
 
         statement.bindString(1, task.getName());
@@ -76,7 +88,9 @@ public class TaskRepo extends SQLiteOpenHelper {
     public void deleteTask(Task task) {
 
         database = this.getReadableDatabase();
-        String sql = "delete from " + TABLE_NAME + " where " + COLUMN_ID + " = '" + task.getId() + "'";
+        String sql = "delete from " + TABLE_NAME +
+                " where " + COLUMN_ID +
+                " = '" + task.getId() + "'";
         SQLiteStatement statement = database.compileStatement(sql);
 
         statement.executeUpdateDelete();

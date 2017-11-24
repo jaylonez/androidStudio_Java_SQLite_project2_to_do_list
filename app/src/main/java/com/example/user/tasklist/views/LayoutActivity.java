@@ -22,7 +22,7 @@ public abstract class LayoutActivity extends AppCompatActivity{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.all_tasks) {
-            Intent intent = new Intent(this, PrioritiesActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
         if (item.getItemId() == R.id.prioritized_tasks) {
