@@ -15,4 +15,5 @@
     <string name="prioritized_tasks">Prioritized</string>
     <string name="themes">Themes</string>
     <string name="DoNotClick">DO NOT CLICK!!!!</string>
+    <string name="update_hint">Hint: Changes to the name/description are saved automatically</string>
 </resources>

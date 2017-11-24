@@ -33,7 +33,7 @@
     <EditText
         android:id="@+id/view_description"
         android:layout_width="360dp"
-        android:layout_height="286dp"
+        android:layout_height="244dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
@@ -43,8 +43,8 @@
         android:hint="@string/TaskDescription"
         android:inputType="textMultiLine"
         android:text="@string/initial_string"
-        android:textSize="14sp"
         android:textColor="?attr/textColor"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,5 +90,19 @@
         android:text="@string/Priority"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="@string/update_hint"
+        android:textColor="?attr/textColor"
+        app:layout_constraintBottom_toTopOf="@+id/delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

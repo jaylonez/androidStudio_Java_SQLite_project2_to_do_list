@@ -24,10 +24,9 @@
 
     <EditText
         android:id="@+id/new_task_name"
-        android:layout_width="360dp"
+        android:layout_width="267dp"
         android:layout_height="70sp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:ellipsize="end"
         android:ems="10"
@@ -39,7 +38,6 @@
         android:textColorHint="?attr/textColor"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,4 +62,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_task_name"
         app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/priority_checkbox"
+        style="@android:style/Widget.DeviceDefault.CompoundButton.Star"
+        android:layout_width="83dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp"
+        android:colorAccent="?attr/colorAccent"
+        android:text="@string/Priority"
+        android:textColor="?attr/textColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
+
